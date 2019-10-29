@@ -20,9 +20,6 @@ RUN git clone https://github.com/awslabs/aws-glue-libs.git
 ENV PATH=/opt/apache-maven-3.6.2/bin:$PATH
 ENV SPARK_HOME=/opt/spark-2.2.1-bin-hadoop2.7
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-0.el7_7.x86_64
-ENV AWS_ACCESS_KEY_ID='dummy'
-ENV AWS_SECRET_ACCESS_KEY='dummy'
-ENV AWS_REGION='ap-northeast-1'
 WORKDIR /opt/aws-glue-libs/
 
 # PySpark

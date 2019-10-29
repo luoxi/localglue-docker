@@ -15,3 +15,7 @@ services:
   localglue:
     container_name: localglue
     image: rossi/localglue
+    environment:
+      - AWS_ACCESS_KEY_ID='dummy'
+      - AWS_SECRET_ACCESS_KEY='dummy'
+      - AWS_REGION='ap-northeast-1'
