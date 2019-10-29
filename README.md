@@ -3,11 +3,13 @@ Visit https://dev.classmethod.jp/cloud/aws/aws-glue-local/
 # Using sample.py
 
 ## boot the localstack
+
 ```
 docker-compose up
 ```
 
 ## init dynamodb
+
 ```
 aws dynamodb create-table \
     --table-name aws-glue-local-test-table \
@@ -19,6 +21,7 @@ aws dynamodb create-table \
 ```
 
 ## insert sample data
+
 ```
 aws dynamodb put-item \
     --table-name aws-glue-local-test-table  \
@@ -28,6 +31,7 @@ aws dynamodb put-item \
 ```
 
 ## init s3
+
 ```
 aws s3api create-bucket \
     --bucket aws-glue-local-test-bucket \
@@ -35,11 +39,14 @@ aws s3api create-bucket \
 ```
 
 ## run sample.py
+
 ```
-./bin/gluesparksubmit ./src/sample.py --JOB_NAME='dummy'
+docker-compose run localglue bash
+./bin/gluesparksubmit sample.py --JOB_NAME='dummy'
 ```
 
 ## check result
+
 ```
 aws s3api list-objects \
     --bucket aws-glue-local-test-bucket \
